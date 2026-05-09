@@ -1,4 +1,9 @@
-// GET_PED_MAX_HEALTH
-const retval: number = GetPedMaxHealth(ped);
+setTick(() => {
+    const ped = PlayerPedId();
 
-console.log("Ped Max Health:", retval);
+    if (ped) {
+        const maxHealth = GetPedMaxHealth(ped);
+
+        console.log(`[FIVEM DEBUG] Ped: ${ped} | Max Health: ${maxHealth}`);
+    }
+});
