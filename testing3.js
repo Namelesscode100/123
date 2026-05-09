@@ -1,9 +1,24 @@
-setTick(() => {
-    const ped = PlayerPedId();
+window.MyModule = {
+  init() {
+    console.log("Module loaded");
 
-    if (ped) {
-        const maxHealth = GetPedMaxHealth(ped);
+    this.setupUI();
+  },
 
-        console.log(`[FIVEM DEBUG] Ped: ${ped} | Max Health: ${maxHealth}`);
-    }
-});
+  setupUI() {
+    console.log("Setting up UI elements...");
+
+    const box = document.createElement("div");
+    box.innerText = "Hello from dynamic module";
+    box.style.position = "absolute";
+    box.style.top = "10px";
+    box.style.right = "10px";
+    box.style.background = "black";
+    box.style.color = "white";
+    box.style.padding = "10px";
+
+    document.body.appendChild(box);
+  }
+};
+
+window.MyModule.init();
